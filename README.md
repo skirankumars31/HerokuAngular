@@ -18,8 +18,10 @@ Applications:
     6. Restangular
     7. Force.com 
 
-RUN: 
+Run: 
 
-mvn tomcat:run
+    mvn tomcat:run
 
-Then open the URL: http://localhost:8080/CloudSoleAngular
+Open:
+
+    http://localhost:8080/CloudSoleAngular

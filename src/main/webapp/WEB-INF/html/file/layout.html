@@ -1,5 +1,6 @@
 <div class="progress">
-<progressbar max="100" animate="true" value="dynamic"><span style="color:black; white-space:nowrap;">{{percent}}%</span></progressbar>
+    <div class="progress-bar" ng-style="{width : ( percent + '%' ) }"></div>
+
 </div>
 <input type="text" ng-model="myModelObj">
 <input type="file" ng-file-select="onFileSelect($files)">
