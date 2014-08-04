@@ -9,13 +9,13 @@ It uses the AngularJS-Seed with some modifications to allow Spring MVC load the 
 Also integrated Velocity in case it is needed to pass some values from the spring mvc controller into the partials or index.html file.
 
 Applications:
-1. Todo App
-2. Address Book
-3. Dynamic Tables
-4. File Upload
-5. Ace Editor
-6. Restangular
-7. Force.com 
+    1. Todo App
+    2. Address Book
+    3. Dynamic Tables
+    4. File Upload
+    5. Ace Editor
+    6. Restangular
+    7. Force.com 
 
 RUN: 
 
