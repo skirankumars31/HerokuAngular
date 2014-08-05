@@ -2,7 +2,7 @@
 
 var AngularSpringApp = {};
 
-var App = angular.module('AngularSpringApp', ['AngularSpringApp.filters', 'AngularSpringApp.services', 'AngularSpringApp.directives', 'ngRoute', 'ui.bootstrap', 'ngTable', 'ui.ace', 'angularFileUpload']);
+var App = angular.module('AngularSpringApp', ['AngularSpringApp.filters', 'AngularSpringApp.services', 'AngularSpringApp.directives', 'ngRoute', 'ui.bootstrap', 'ngTable', 'ui.ace', 'angularFileUpload', 'nvd3ChartDirectives']);
 
 // Declare app level module which depends on filters, and services
 App.config(['$routeProvider', function ($routeProvider) {
@@ -19,6 +19,11 @@ App.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'table/layout',
         controller: TableController
     });
+    $routeProvider.when('/tabs', {
+        templateUrl: 'tabs/layout',
+        controller: TabsController
+    })
+
     $routeProvider.when('/file', {
         templateUrl: 'file/layout',
         controller: FileController
@@ -27,7 +32,7 @@ App.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'editor/layout',
         controller: EditorController
     });
-    $routeProvider.when('/rest', {
+    $routeProvider.when('/restangular', {
         templateUrl: 'restangular/layout',
         controller: RestController
     });
@@ -35,6 +40,10 @@ App.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'force/layout',
         controller: ForceController
     });
+    $routeProvider.when('/d3', {
+        templateUrl: 'd3/layout',
+        controller: D3Controller
+    })
 
     $routeProvider.otherwise({redirectTo: '/todo'});
 }]);

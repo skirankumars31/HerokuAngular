@@ -13,10 +13,12 @@ Applications:
     1. Todo App
     2. Address Book
     3. Dynamic Tables
+    4. Dynamic Tabs
     4. File Upload
     5. Ace Editor
     6. Restangular
-    7. Force.com 
+    7. D3 Chart
+    8. Force.com 
 
 Run: 
 

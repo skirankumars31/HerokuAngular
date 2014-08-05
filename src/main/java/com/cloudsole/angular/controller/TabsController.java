@@ -4,15 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by tmichels on 8/3/14.
+ * Created by tmichels on 8/4/14.
  */
 
 @Controller
-@RequestMapping("/force")
-public class ForceController {
+@RequestMapping("/tabs")
+public class TabsController {
 
     @RequestMapping("/layout")
     public String layout(){
-        return "force/layout";
+        return "tabs/layout";
     }
 }

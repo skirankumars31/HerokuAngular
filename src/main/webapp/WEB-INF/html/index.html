@@ -14,6 +14,8 @@
     <link href="resources/css/flat-ui.css" rel="stylesheet">
     <link href="resources/css/docs.css" rel="stylesheet">
 
+    <link href="resources/css/nv.d3.min.css" rel="stylesheet">
+
 </head>
 <body>
 <div id="wrapper">
@@ -26,23 +28,16 @@
         <li><a href="#/file">File Upload</a></li>
         <li><a href="#/editor">Ace Editor</a></li>
         <li><a href="#/restangular">Restangular</a></li>
+        <li><a href="#/d3">D3 Chart</a></li>
         <li><a href="#/force">Force.com</a></li>
+        <li><a href="#/postgres">Postgres Angular</a></li>
+        <li><a href="#/mongo">Mongo Angular</a></li>
+        <li><a href="#/redis">Redis Angular</a></li>
     </ul>
 
-
     <h1 class="demo-headline">AngularJS</h1>
-    <div class="container">
-        <div id="fui-button" class="pbl"></div>
+    <div ng-view></div>
 
-        <div class="demo-row">
-            <div class="demo-title">
-                Todo List
-            </div>
-            <div class="demo-content">
-                <div ng-view></div>
-            </div> <!-- /.demo-content -->
-        </div> <!-- /.demo-row -->
-    </div><!-- /.container -->
 </div>
 
 <script src="resources/js/jquery-1.8.3.min.js"></script>
@@ -68,8 +63,11 @@
 <script src="resources/js/lib/angular/ui-ace.min.js"></script>
 <script src="resources/js/lib/angular/ng-table.min.js"></script>
 
-
 <script src="resources/js/lib/angular/angular-file-upload.min.js"></script>
+
+<script src="resources/js/d3.min.js"></script>
+<script src="resources/js/nv.d3.js"></script>
+<script src="resources/js/lib/angular/angularjs-nvd3-directives.min.js"></script>
 
 <script src="resources/js/app.js"></script>
 <script src="resources/js/services.js"></script>
@@ -80,8 +78,11 @@
 <script src="resources/js/controllers/EditorController.js"></script>
 <script src="resources/js/controllers/RestController.js"></script>
 <script src="resources/js/controllers/ForceController.js"></script>
+<script src="resources/js/controllers/D3Controller.js"></script>
+<script src="resources/js/controllers/TabsController.js"></script>
 <script src="resources/js/filters.js"></script>
 <script src="resources/js/directives.js"></script>
+
 
 <script src="resources/js/lib/angular/restangular.min.js"></script>
 </body>
