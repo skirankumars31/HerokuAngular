@@ -36,7 +36,7 @@ function setupModuleLoader(window) {
      *
      * # Module
      *
-     * A module is a collocation of services, directives, filters, and configuration information. Module
+     * A module is a collocation of service, directives, filters, and configuration information. Module
      * is used to configure the {@link AUTO.$injector $injector}.
      *
      * <pre>
@@ -46,7 +46,7 @@ function setupModuleLoader(window) {
      * // register a new service
      * myModule.value('appName', 'MyCoolApp');
      *
-     * // configure existing services inside initialization blocks.
+     * // configure existing service inside initialization blocks.
      * myModule.config(function($locationProvider) {
 'use strict';
      *   // Configure existing providers

@@ -1015,7 +1015,7 @@ function setupModuleLoader(window) {
      *
      * # Module
      *
-     * A module is a collocation of services, directives, filters, and configuration information. Module
+     * A module is a collocation of service, directives, filters, and configuration information. Module
      * is used to configure the {@link AUTO.$injector $injector}.
      *
      * <pre>
@@ -1025,7 +1025,7 @@ function setupModuleLoader(window) {
      * // register a new service
      * myModule.value('appName', 'MyCoolApp');
      *
-     * // configure existing services inside initialization blocks.
+     * // configure existing service inside initialization blocks.
      * myModule.config(function($locationProvider) {
      *   // Configure existing providers
      *   $locationProvider.hashPrefix('!');
@@ -2233,7 +2233,7 @@ HashQueueMap.prototype = {
  * @function
  *
  * @description
- * Creates an injector function that can be used for retrieving services as well as for
+ * Creates an injector function that can be used for retrieving service as well as for
  * dependency injection (see {@link guide/di dependency injection}).
  *
 
@@ -2399,7 +2399,7 @@ function annotate(fn) {
  *
  * @description
  * Returns an array of service names which the function is requesting for injection. This API is used by the injector
- * to determine which services need to be injected into the function when the function is invoked. There are three
+ * to determine which service need to be injected into the function when the function is invoked. There are three
  * ways in which the function can be annotated with the needed dependencies.
  *
  * # Argument names
@@ -2422,7 +2422,7 @@ function annotate(fn) {
  * # The `$injector` property
  *
  * If a function has an `$inject` property and its value is an array of strings, then the strings represent names of
- * services to be injected into the function.
+ * service to be injected into the function.
  * <pre>
  *   // Given
  *   var MyController = function(obfuscatedScope, obfuscatedRoute) {
@@ -2468,7 +2468,7 @@ function annotate(fn) {
  * @param {function|Array.<string|Function>} fn Function for which dependent service names need to be retrieved as described
  *   above.
  *
- * @returns {Array.<string>} The names of the services which the function requires.
+ * @returns {Array.<string>} The names of the service which the function requires.
  */
 
 
@@ -2549,7 +2549,7 @@ function annotate(fn) {
  * @methodOf AUTO.$provide
  * @description
  *
- * A short hand for configuring services if only `$get` method is required.
+ * A short hand for configuring service if only `$get` method is required.
  *
  * @param {string} name The name of the instance.
  * @param {function()} $getFn The $getFn for the instance creation. Internally this is a short hand for
@@ -2578,7 +2578,7 @@ function annotate(fn) {
  * @methodOf AUTO.$provide
  * @description
  *
- * A short hand for configuring services if the `$get` method is a constant.
+ * A short hand for configuring service if the `$get` method is a constant.
  *
  * @param {string} name The name of the instance.
  * @param {*} value The value.
@@ -4575,7 +4575,7 @@ function directiveLinkingFn(
  * @name ng.$controllerProvider
  * @description
  * The {@link ng.$controller $controller service} is used by Angular to create new
- * controllers.
+ * controller.
  *
  * This provider allows controller registration via the
  * {@link ng.$controllerProvider#register register} method.
@@ -4620,7 +4620,7 @@ function $ControllerProvider() {
      * @return {Object} Instance of given controller.
      *
      * @description
-     * `$controller` service is responsible for instantiating controllers.
+     * `$controller` service is responsible for instantiating controller.
      *
      * It's just simple call to {@link AUTO.$injector $injector}, but extracted into
      * a service, so that one can override this service with {@link https://gist.github.com/1649788
@@ -6974,7 +6974,7 @@ function $RouteProvider(){
      * @property {Array.<Object>} routes Array of all configured routes.
      *
      * @description
-     * Is used for deep-linking URLs to controllers and views (HTML partials).
+     * Is used for deep-linking URLs to controller and views (HTML partials).
      * It watches `$location.url()` and tries to map the path to an existing route definition.
      *
      * You can define routes through {@link ng.$routeProvider $routeProvider}'s API.
@@ -7085,7 +7085,7 @@ function $RouteProvider(){
      * @eventOf ng.$route
      * @eventType broadcast on root scope
      * @description
-     * Broadcasted before a route change. At this  point the route services starts
+     * Broadcasted before a route change. At this  point the route service starts
      * resolving all of the dependencies needed for the route change to occurs.
      * Typically this involves fetching the view template as well as any dependencies
      * defined in `resolve` route property. Once  all of the dependencies are resolved
@@ -7448,8 +7448,8 @@ function $RootScopeProvider(){
      *
      * @param {Object.<string, function()>=} providers Map of service factory which need to be provided
      *     for the current scope. Defaults to {@link ng}.
-     * @param {Object.<string, *>=} instanceCache Provides pre-instantiated services which should
-     *     append/override services provided by `providers`. This is handy when unit-testing and having
+     * @param {Object.<string, *>=} instanceCache Provides pre-instantiated service which should
+     *     append/override service provided by `providers`. This is handy when unit-testing and having
      *     the need to override a default service.
      * @returns {Object} Newly created scope.
      *
@@ -7505,7 +7505,7 @@ function $RootScopeProvider(){
 
         if (isFunction(isolate)) {
           // TODO: remove at some point
-          throw Error('API-CHANGE: Use $controller to instantiate controllers.');
+          throw Error('API-CHANGE: Use $controller to instantiate controller.');
         }
         if (isolate) {
           child = new Scope();
@@ -7651,7 +7651,7 @@ function $RootScopeProvider(){
        * `'Maximum iteration limit exceeded.'` if the number of iterations exceeds 10.
        *
        * Usually you don't call `$digest()` directly in
-       * {@link ng.directive:ngController controllers} or in
+       * {@link ng.directive:ngController controller} or in
        * {@link ng.$compileProvider#directive directives}.
        * Instead a call to {@link ng.$rootScope.Scope#$apply $apply()} (typically from within a
        * {@link ng.$compileProvider#directive directives}) will force a `$digest()`.
@@ -11640,7 +11640,7 @@ var VALID_CLASS = 'ng-valid',
  * @description
  *
  * `NgModelController` provides API for the `ng-model` directive. The controller contains
- * services for data-binding, validation, CSS update, value formatting and parsing. It
+ * service for data-binding, validation, CSS update, value formatting and parsing. It
  * specifically does not contain any logic which deals with DOM rendering or listening to
  * DOM events. The `NgModelController` is meant to be extended by other directives where, the
  * directive provides DOM manipulation and the `NgModelController` provides the data-binding.
@@ -12523,7 +12523,7 @@ var ngCloakDirective = ngDirective({
  * * Controller — The `ngController` directive specifies a Controller class; the class has
  *   methods that typically express the business logic behind the application.
  *
- * Note that an alternative way to define controllers is via the `{@link ng.$route}`
+ * Note that an alternative way to define controller is via the `{@link ng.$route}`
  * service.
  *
  * @element ANY
