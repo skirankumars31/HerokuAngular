@@ -16,6 +16,9 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public List<String> allTodos() {
+        todos.add("Write better code");
+        todos.add("Learn AngularJs");
+        todos.add("Watch star wars again!!!");
         return todos;
     }
 

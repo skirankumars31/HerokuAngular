@@ -17,6 +17,18 @@ public class AddressBookServiceImpl implements AddressBookService {
 
     @Override
     public List<AddressBook> viewAllAddressBook() {
+        AddressBook addressBook1 = new AddressBook();
+        addressBook1.setEmail("test@mail.com");
+        addressBook1.setFirstName("John");
+        addressBook1.setLastName("Doe");
+        addressBook1.setPhone("12345678");
+        AddressBook addressBook2 = new AddressBook();
+        addressBook2.setFirstName("George");
+        addressBook2.setLastName("Lucas");
+        addressBook2.setPhone("0099332244");
+        addressBook2.setEmail("george.lucas@mail.com");
+        addressBooks.add(addressBook1);
+        addressBooks.add(addressBook2);
         return addressBooks;
     }
 
