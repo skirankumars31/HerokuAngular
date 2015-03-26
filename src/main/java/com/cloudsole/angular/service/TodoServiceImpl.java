@@ -2,6 +2,7 @@ package com.cloudsole.angular.service;
 
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,17 +15,23 @@ public class TodoServiceImpl implements TodoService {
 
     List<String> todos = new ArrayList<String>();
 
-    @Override
-    public List<String> allTodos() {
+    @PostConstruct
+    public void setupTodo(){
         todos.add("Write better code");
         todos.add("Learn AngularJs");
         todos.add("Watch star wars again!!!");
+    }
+
+    @Override
+    public List<String> allTodos() {
         return todos;
     }
 
     @Override
     public void addTodo(String todo) {
-        todos.add(todo);
+        if (!todos.contains(todo)){
+            todos.add(todo);
+        }
     }
 
     @Override

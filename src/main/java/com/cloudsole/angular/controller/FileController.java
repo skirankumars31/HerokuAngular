@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/file")
 public class FileController {
 
+    //TODO: add different ways to drop files
+
     @RequestMapping("/layout")
     public String layout(){
         return "file/layout";
@@ -21,6 +23,6 @@ public class FileController {
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public @ResponseBody void uploadFile(@RequestBody String file){
-        //Handle File
+        //Transform String file to real file and return size of file
     }
 }

@@ -3,6 +3,7 @@ package com.cloudsole.angular.service;
 import com.cloudsole.angular.model.AddressBook;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +16,8 @@ public class AddressBookServiceImpl implements AddressBookService {
     List<AddressBook> addressBooks = new ArrayList<AddressBook>();
     private static Long id = 0L;
 
-    @Override
-    public List<AddressBook> viewAllAddressBook() {
+    @PostConstruct
+    public void setupAddressBook(){
         AddressBook addressBook1 = new AddressBook();
         addressBook1.setEmail("test@mail.com");
         addressBook1.setFirstName("John");
@@ -29,14 +30,20 @@ public class AddressBookServiceImpl implements AddressBookService {
         addressBook2.setEmail("george.lucas@mail.com");
         addressBooks.add(addressBook1);
         addressBooks.add(addressBook2);
+    }
+
+    @Override
+    public List<AddressBook> viewAllAddressBook() {
         return addressBooks;
     }
 
     @Override
     public void createAddressBook(AddressBook addressBook) {
-        addressBook.setId(id);
-        addressBooks.add(addressBook);
-        ++id;
+        if (!addressBooks.contains(addressBook)){
+            addressBook.setId(id);
+            addressBooks.add(addressBook);
+            ++id;
+        }
     }
 
     @Override
